@@ -1,13 +1,76 @@
 # Configuration - Système de Surveillance Épidémiologique
 # Tanger-Tétouan-Al Hoceima, Maroc
+# Version Enhanced - February 2026
 
 sources:
-  # Sources marocaines - Français
+  # ===================================================================
+  # SOURCES LOCALES - MAROC (Tanger-Tétouan-Al Hoceima)
+  # ===================================================================
+  
+  # --- TANGER LOCAL MEDIA ---
+  - name: "Tanger24"
+    type: rss
+    url: "https://www.tanger24.com/feed"
+    language: fr
+
+  - name: "Tanja7"
+    type: rss
+    url: "https://www.tanja7.com/feed"
+    language: ar
+
+  - name: "TanjaNews"
+    type: rss
+    url: "https://www.tanjanews.com/feed"
+    language: ar
+
+  - name: "AkhbarTanja"
+    type: rss
+    url: "https://akhbartanja.com/feed"
+    language: ar
+
+  - name: "Achkayen (Nord coverage)"
+    type: rss
+    url: "https://www.achkayen.com/feed"
+    language: ar
+
+  # --- TETOUAN / MDIQ / FNIDEQ ---
+  - name: "Tetouanews"
+    type: rss
+    url: "https://tetouanews.net/feed"
+    language: ar
+
+  - name: "Mdiq City"
+    type: rss
+    url: "https://www.mdiqcity.com/feed"
+    language: ar
+
+  # --- LARACHE / AL HOCEIMA / CHEFCHAOUEN ---
+  - name: "Larache News"
+    type: rss
+    url: "https://larachenews.net/feed"
+    language: ar
+
+  - name: "Al Hoceima Press"
+    type: rss
+    url: "https://alhociemapress.com/feed"
+    language: ar
+
+  - name: "Chefchaouen 24"
+    type: rss
+    url: "https://chefchaouen24.com/feed"
+    language: ar
+
+  # --- MAROC NATIONAL MEDIA ---
   - name: "Hespress Fr"
     type: rss
     url: "https://www.fr.hespress.com/feed"
     language: fr
-    
+
+  - name: "Hespress Ar"
+    type: rss
+    url: "https://www.hespress.com/feed"
+    language: ar
+
   - name: "Le360 Santé"
     type: rss
     url: "https://fr.le360.ma/rss/sante.xml"
@@ -18,45 +81,103 @@ sources:
     url: "https://medias24.com/feed/"
     language: fr
 
-  - name: "Hespress Ar"
-    type: rss
-    url: "https://www.hespress.com/feed"
-    language: ar
-  
-  # Sources internationales - Santé globale
-  - name: "WHO AFRO (Région Afrique)"
-    type: rss
-    url: "https://www.afro.who.int/rss.xml"
-    language: en
-    
-  - name: "ProMED-mail Afrique du Nord"
-    type: rss
-    url: "https://promedmail.org/feed/"
-    language: en
-    
-  - name: "ECDC - European CDC"
-    type: rss
-    url: "https://www.ecdc.europa.eu/en/home/rss-feeds-subscribe-ecdcs-updates"
-    language: en
-
   - name: "MAP Santé"
     type: rss
     url: "https://www.mapnews.ma/fr/sante/feed"
     language: fr
+
+  # ===================================================================
+  # GLOBAL EARLY WARNING SYSTEMS
+  # ===================================================================
   
-  # Sources algériennes (pays limitrophe)
+  - name: "WHO AFRO (Région Afrique)"
+    type: rss
+    url: "https://www.afro.who.int/rss.xml"
+    language: en
+
+  - name: "WHO Disease Outbreak News"
+    type: rss
+    url: "https://www.who.int/feeds/entity/csr/don/en/rss.xml"
+    language: en
+    
+  - name: "ProMED-mail International"
+    type: rss
+    url: "https://promedmail.org/feed/"
+    language: en
+
+  - name: "HealthMap - Global Alerts"
+    type: web_scraping  # May require custom scraping or API access
+    url: "https://www.healthmap.org/en/"
+    language: en
+    note: "Consider API integration for real-time alerts"
+
+  - name: "GISAID - EpiCoV Updates"
+    type: web_scraping  # Requires registration
+    url: "https://gisaid.org/"
+    language: en
+    note: "Monitor for novel pathogen sequences in North Africa/MENA"
+
+  # ===================================================================
+  # NORTH AFRICA & MAGHREB (Enhanced Coverage)
+  # ===================================================================
+  
+  # --- ALGERIA ---
   - name: "TSA Algérie - Santé"
     type: rss
     url: "https://www.tsa-algerie.dz/category/sante/feed/"
     language: fr
-    
-  # Sources espagnoles (Ceuta/Melilla limitrophes)
-  - name: "El País - Salud"
-    type: rss
-    url: "https://feeds.elpais.com/mrss-s/pages/ep/site/elpais.com/section/sociedad/portada"
-    language: es
 
-      # --- European CDC (High-signal Europe alerts) ---
+  - name: "Algérie Presse Service (APS) - Santé"
+    type: rss
+    url: "http://www.aps.dz/sante-science-technologie/feed"
+    language: fr
+
+  - name: "El Watan - Santé"
+    type: rss
+    url: "https://www.elwatan.com/cat-118/feed"
+    language: fr
+
+  - name: "Liberté Algérie - Société"
+    type: rss
+    url: "https://www.liberte-algerie.com/category/societe/feed"
+    language: fr
+
+  # --- TUNISIA ---
+  - name: "TAP (Tunis Afrique Presse) - Santé"
+    type: rss
+    url: "https://www.tap.info.tn/fr/rss/8"
+    language: fr
+
+  - name: "Kapitalis - Santé"
+    type: rss
+    url: "https://kapitalis.com/tunisie/category/societe/sante/feed/"
+    language: fr
+
+  # --- LIBYA ---
+  - name: "Libya Observer - Health"
+    type: web_scraping
+    url: "https://www.libyaobserver.ly/category/health"
+    language: en
+    note: "Monitor manually - RSS may be unreliable"
+
+  - name: "Libya Herald"
+    type: web_scraping
+    url: "https://www.libyaherald.com/"
+    language: en
+    note: "Check health/society sections"
+
+  # --- MAURITANIA ---
+  - name: "Agence Mauritanienne d'Information (AMI) - Santé"
+    type: web_scraping
+    url: "https://ami.mr/fr/sante"
+    language: fr
+    note: "Manual monitoring recommended"
+
+  # ===================================================================
+  # EUROPE - CROSS-BORDER SURVEILLANCE
+  # ===================================================================
+  
+  # --- European CDC ---
   - name: "ECDC - Threats (CDTR)"
     type: rss
     url: "https://www.ecdc.europa.eu/en/taxonomy/term/1295/feed"
@@ -77,7 +198,17 @@ sources:
     url: "https://www.ecdc.europa.eu/en/taxonomy/term/1307/feed"
     language: en
 
-  # --- Andalusia Health System (Cross-border buffer zone) ---
+  - name: "ECDC Flu News Europe"
+    type: rss
+    url: "https://flunewseurope.org/feed"
+    language: en
+
+  # --- SPAIN (Ceuta/Melilla/Andalusia) ---
+  - name: "El País - Salud"
+    type: rss
+    url: "https://feeds.elpais.com/mrss-s/pages/ep/site/elpais.com/section/sociedad/portada"
+    language: es
+
   - name: "Servicio Andaluz de Salud - Noticias"
     type: rss
     url: "https://www.sspa.juntadeandalucia.es/servicioandaluzdesalud/rss-noticias.xml"
@@ -88,7 +219,66 @@ sources:
     url: "https://www.sspa.juntadeandalucia.es/servicioandaluzdesalud/rss-novedades.xml"
     language: es
 
-  # --- CDC Emerging Infectious Diseases (Scientific early warning) ---
+  - name: "Ministerio de Sanidad - España"
+    type: rss
+    url: "https://www.sanidad.gob.es/RSS/RSS.xml"
+    language: es
+
+  # --- FRANCE (Diaspora corridor) ---
+  - name: "Santé Publique France - Actualités"
+    type: rss
+    url: "https://www.santepubliquefrance.fr/rss"
+    language: fr
+
+  - name: "Santé Publique France - Maladies Infectieuses"
+    type: web_scraping
+    url: "https://www.santepubliquefrance.fr/maladies-et-traumatismes/maladies-infectieuses"
+    language: fr
+
+  # ===================================================================
+  # SUB-SAHARAN AFRICA (Migration/Trade Corridors)
+  # ===================================================================
+  
+  - name: "IRIN News - West Africa"
+    type: rss
+    url: "https://www.thenewhumanitarian.org/region/west-africa/feed"
+    language: en
+
+  - name: "IRIN News - Middle East & North Africa"
+    type: rss
+    url: "https://www.thenewhumanitarian.org/region/middle-east-and-north-africa/feed"
+    language: en
+
+  - name: "ReliefWeb - Global Updates"
+    type: rss
+    url: "https://reliefweb.int/rss"
+    language: en
+
+  - name: "ReliefWeb - West & Central Africa"
+    type: rss
+    url: "https://reliefweb.int/updates?country=west-and-central-africa"
+    language: en
+    note: "Filter for health/epidemic tags"
+
+  # ===================================================================
+  # MIDDLE EAST (Hajj/Umrah Pilgrimage Corridor)
+  # ===================================================================
+  
+  - name: "Saudi Arabia MOH - Press Releases"
+    type: web_scraping
+    url: "https://www.moh.gov.sa/en/Pages/Default.aspx"
+    language: en
+    note: "Monitor during Hajj/Umrah seasons especially"
+
+  - name: "WHO EMRO (Eastern Mediterranean)"
+    type: rss
+    url: "http://www.emro.who.int/rss-feeds/news/"
+    language: en
+
+  # ===================================================================
+  # SCIENTIFIC & PEER-REVIEWED SURVEILLANCE
+  # ===================================================================
+  
   - name: "CDC EID - Ahead of Print"
     type: rss
     url: "http://wwwnc.cdc.gov/eid/rss/ahead-of-print.xml"
@@ -104,99 +294,459 @@ sources:
     url: "https://wwwnc.cdc.gov/eid/rss/upcoming.xml"
     language: en
 
-  # --- ReliefWeb (Disasters & humanitarian signals) ---
-  - name: "ReliefWeb - Global Updates"
+  - name: "Eurosurveillance - Rapid Communications"
     type: rss
-    url: "https://reliefweb.int/rss"
+    url: "https://www.eurosurveillance.org/rss/rapid-communications"
     language: en
 
-# Mots-clés de vigilance (utilisés pour contexte supplémentaire)
+  - name: "Eurosurveillance - Research Articles"
+    type: rss
+    url: "https://www.eurosurveillance.org/rss/research-articles"
+    language: en
+
+  - name: "The Lancet Infectious Diseases"
+    type: rss
+    url: "https://www.thelancet.com/rssfeed/laninf_current.xml"
+    language: en
+
+  - name: "medRxiv - Epidemiology Preprints"
+    type: rss
+    url: "https://connect.medrxiv.org/medrxiv_xml.php?subject=epidemiology"
+    language: en
+    note: "Unreviewed - use with caution but fastest signal"
+
+  - name: "bioRxiv - Microbiology Preprints"
+    type: rss
+    url: "https://connect.biorxiv.org/biorxiv_xml.php?subject=microbiology"
+    language: en
+
+  # ===================================================================
+  # ANIMAL HEALTH & ZOONOTIC SURVEILLANCE (One Health)
+  # ===================================================================
+  
+  - name: "FAO EMPRES-i (Animal Health)"
+    type: web_scraping
+    url: "https://empres-i.apps.fao.org/"
+    language: en
+    note: "API available - integrate for animal disease outbreaks"
+
+  - name: "WOAH (OIE) - Disease Information"
+    type: rss
+    url: "https://www.woah.org/en/what-we-offer/emergency-and-resilience/disease-information-system/feeds/"
+    language: en
+    note: "Monitor for transboundary animal diseases"
+
+  - name: "WOAH - Immediate Notifications"
+    type: web_scraping
+    url: "https://wahis.woah.org/#/home"
+    language: en
+    note: "WAHIS platform - requires monitoring dashboard"
+
+  # ===================================================================
+  # ENVIRONMENTAL & CLIMATE DRIVERS
+  # ===================================================================
+  
+  - name: "Copernicus Emergency Management Service"
+    type: web_scraping
+    url: "https://emergency.copernicus.eu/"
+    language: en
+    note: "Monitor flood/drought alerts for Morocco"
+
+  - name: "FEWS NET - North Africa"
+    type: rss
+    url: "https://fews.net/rss.xml"
+    language: en
+    note: "Food insecurity = health crisis precursor"
+
+  - name: "ECMWF Severe Weather Forecasts"
+    type: web_scraping
+    url: "https://www.ecmwf.int/"
+    language: en
+    note: "Extreme weather = vector/waterborne disease risk"
+
+  # ===================================================================
+  # SOCIAL MEDIA & INFORMAL SURVEILLANCE (Optional)
+  # ===================================================================
+  
+  - name: "Twitter/X - WHO Accounts"
+    type: social_media
+    accounts:
+      - "@WHO"
+      - "@WHOAFRO"
+      - "@WHOEMRO"
+      - "@CDCgov"
+      - "@ECDC_EU"
+    language: multi
+    note: "Real-time monitoring for breaking alerts"
+
+  - name: "Twitter/X - Epidemiologist Watchlist"
+    type: social_media
+    accounts:
+      - "@DrTedros"
+      - "@FLAHAULT"
+      - "@K_G_Andersen"
+      - "@erictopol"
+      - "@CT_Bergstrom"
+    language: en
+    note: "Expert commentary on emerging threats"
+
+  - name: "Reddit - Epidemiology Community"
+    type: social_media
+    subreddits:
+      - "r/epidemiology"
+      - "r/InfectiousDiseases"
+      - "r/publichealth"
+    language: en
+    note: "Professional discussions, early signals"
+
+# ===================================================================
+# MOTS-CLÉS DE VIGILANCE (Enhanced)
+# ===================================================================
+
 keywords:
   maladies_infectieuses:
+    # Viral
     - grippe
+    - influenza
     - covid
+    - coronavirus
+    - SARS
+    - MERS
+    - mpox
+    - monkeypox
+    - variole du singe
     - fièvre hémorragique
     - ebola
-    - nipah
     - marburg
-    - peste
+    - lassa
+    - nipah
+    - fièvre de la vallée du Rift
+    - Rift Valley fever
     - fièvre jaune
-    - tuberculose
-    - méningite
+    - dengue
+    - chikungunya
+    - Zika
+    - West Nile
+    - Nil occidental
     - rougeole
+    - rubéole
+    - oreillons
     - hépatite
+    - polio
+    - poliovirus
+    - rage
+    - rabies
+    
+    # Bacterial
+    - peste
     - choléra
     - typhoïde
+    - tuberculose
+    - méningite
+    - diphtérie
+    - coqueluche
+    - tétanos
+    - leptospirose
+    - brucellose
+    - anthrax
+    - charbon
+    - salmonellose
+    - shigellose
+    - E. coli
+    - listériose
+    
+    # Parasitic
     - paludisme
-    - dengue
+    - malaria
     - leishmaniose
-    - rage
+    - bilharziose
+    - schistosomiase
+    - trypanosomiase
+    - échinococcose
+    
+    # Fungal
+    - candidose
+    - aspergillose
+    - cryptococcose
+    
+    # AMR
+    - résistance aux antibiotiques
+    - antimicrobial resistance
+    - superbactérie
+    - multirésistance
+    - MDR
+    - XDR
     
   symptomes_collectifs:
     - intoxication
+    - intoxication alimentaire
     - TIAC
+    - toxi-infection
     - contamination
     - épidémie
     - pandémie
     - cluster
     - flambée
+    - outbreak
     - augmentation inhabituelle de cas
-    - hospitalisation
-    - décès
+    - pic de cas
+    - hospitalisation massive
+    - surmortalité
+    - décès inexpliqués
     - urgence sanitaire
+    - urgence de santé publique
+    - PHEIC
     - foyer
     - cas groupés
     - collectivités
     - éclosion
+    - transmission communautaire
+    - cas importés
+    - cas suspects
+    - cas confirmés
+    - quarantaine
+    - isolement
+    - confinement
+    - restriction de mouvement
+    - fermeture d'écoles
+    - fermeture de marchés
     
   one_health:
+    # Zoonoses
     - zoonose
+    - zoonotic
+    - transmission animale
     - grippe aviaire
+    - bird flu
+    - H5N1
+    - H7N9
     - fièvre aphteuse
     - brucellose
     - rage animale
     - rage humaine
+    - peste des petits ruminants
+    - maladie de Newcastle
+    - mortalité animale massive
+    - mortalité inhabituelle
+    - animal die-off
+    
+    # Vectors
     - moustique
-    - rongeur
+    - Aedes
+    - Anopheles
+    - Culex
     - phlébotome
-    - mortalité animale
+    - tique
+    - tick
+    - rongeur
+    - rat
+    - chauve-souris
+    - bat
+    - réservoir animal
+    - vecteur
+    - vector-borne
+    - arthropode
     
   environnement:
     - eau potable
+    - eau contaminée
     - assainissement
+    - système d'égouts
     - pollution
+    - pollution de l'eau
+    - qualité de l'air
     - pesticides
+    - produits chimiques
+    - déversement toxique
     - inondation
+    - sécheresse
     - tremblement de terre
-    - vecteurs
+    - séisme
+    - tsunami
+    - ouragan
+    - cyclone
+    - canicule
+    - vague de chaleur
+    - vague de froid
+    - changement climatique
+    - conditions météorologiques extrêmes
+    - migration climatique
     
   zones_prioritaires:
+    # Région TTA
     - Tanger
+    - Tangier
     - Tétouan
+    - Tetouan
     - Al Hoceima
+    - Alhucemas
     - Larache
     - Ksar El Kebir
+    - Ksar el-Kebir
     - Chefchaouen
+    - Chaouen
     - Ouezzane
+    - Wazzan
     - Rif
     - Fahs
     - Anjra
     - Mdiq
+    - M'diq
     - Fnideq
     - Martil
     - Assilah
+    - Asilah
+    
+    # Cross-border
     - Ceuta
     - Melilla
     - Andalousie
+    - Andalusia
+    - Gibraltar
+    - détroit de Gibraltar
+    - Strait of Gibraltar
+    
+    # Maghreb
     - Algérie
+    - Algeria
+    - Oujda
+    - Oran
+    - Tlemcen
+    - Tunisie
+    - Tunisia
+    - Libye
+    - Libya
     - Mauritanie
+    - Mauritania
+    
+    # Broader regions
     - MENA
     - Maghreb
+    - North Africa
+    - Afrique du Nord
+    - West Africa
+    - Afrique de l'Ouest
+    - Sahel
+    - Mediterranean
+    - Méditerranée
 
-# Configuration de fréquence
-scan_frequency:
-  time: "09:00"  # Heure du scan quotidien (format 24h)
-  timezone: "Africa/Casablanca"
+# ===================================================================
+# ALERT SEVERITY THRESHOLDS (Recommended)
+# ===================================================================
 
-# Niveau de vigilance
-alert_threshold: "medium"  # low, medium, high, critical
+alert_levels:
+  critical:
+    description: "Immediate threat to regional health security"
+    triggers:
+      - Novel pathogen detection within 1000km
+      - Hemorrhagic fever cases in North Africa
+      - Pandemic potential pathogen (PPP) emergence
+      - Bioterrorism event
+      - Antimicrobial resistance crisis
+    actions:
+      - Immediate notification to health authorities
+      - Activate incident response team
+      - Issue public alert
+      
+  high:
+    description: "Significant risk requiring enhanced surveillance"
+    triggers:
+      - Outbreak of vaccine-preventable disease
+      - Unusual disease cluster (≥3 cases)
+      - Zoonotic spillover event
+      - Foodborne/waterborne outbreak
+      - Cross-border disease detection
+    actions:
+      - Daily monitoring
+      - Coordinate with regional authorities
+      - Prepare response resources
+      
+  medium:
+    description: "Elevated risk requiring monitoring"
+    triggers:
+      - Seasonal disease surge above baseline
+      - Environmental contamination event
+      - Animal disease outbreak (potential zoonotic)
+      - Travel-associated cases
+    actions:
+      - Enhanced surveillance
+      - Weekly situation reports
+      
+  low:
+    description: "Routine surveillance signals"
+    triggers:
+      - Expected seasonal patterns
+      - Single sporadic cases
+      - Environmental monitoring alerts
+    actions:
+      - Standard monitoring protocols
+
+# ===================================================================
+# DATA PROCESSING NOTES
+# ===================================================================
+
+processing_recommendations:
+  - Use NLP for Arabic/French/Spanish content extraction
+  - Implement geographic entity recognition for outbreak locations
+  - Set up automated alerts for critical keywords
+  - Deduplicate cross-source reports (same outbreak, multiple sources)
+  - Maintain 90-day rolling surveillance database
+  - Generate weekly epidemiological bulletins
+  - Cross-reference animal health events with human case surveillance
+  - Monitor social media sentiment for outbreak rumors (informal surveillance)
+  - Establish baseline for seasonal diseases to detect anomalies
+  - Integrate climate/weather data for vector-borne disease prediction
+
+# ===================================================================
+# LEGAL & ETHICAL CONSIDERATIONS
+# ===================================================================
+
+compliance:
+  - Respect data privacy regulations (GDPR for EU sources)
+  - Verify information before dissemination (no rumor amplification)
+  - Attribute sources properly
+  - Coordinate alerts with Moroccan Ministry of Health protocols
+  - Maintain data security for sensitive epidemiological information
+  - Follow IHR (International Health Regulations) reporting standards
+
+# ===================================================================
+# MAINTENANCE SCHEDULE
+# ===================================================================
+
+maintenance:
+  daily:
+    - Check RSS feed functionality
+    - Monitor critical sources (ProMED, WHO, ECDC)
+    - Verify alert triggers
+    
+  weekly:
+    - Review new sources in region
+    - Test web scraping scripts
+    - Update keyword lists based on emerging threats
+    
+  monthly:
+    - Audit source reliability/quality
+    - Review false positive rates
+    - Update contact lists for authorities
+    
+  quarterly:
+    - Comprehensive system evaluation
+    - Stakeholder feedback integration
+    - Benchmark against international standards
+
+# ===================================================================
+# VERSION HISTORY
+# ===================================================================
+
+version: 2.0
+last_updated: 2026-02-14
+changes:
+  - Added 35+ new sources (global, regional, scientific)
+  - Enhanced North Africa coverage (Algeria, Tunisia, Libya, Mauritania)
+  - Integrated One Health surveillance (FAO EMPRES, WOAH)
+  - Added pilgrimage corridor monitoring (Saudi Arabia)
+  - Expanded keyword library (mpox, AMR, CCHF, etc.)
+  - Included environmental/climate monitoring
+  - Added social media surveillance options
+  - Defined alert severity thresholds
+  - Established maintenance protocols
