@@ -1,0 +1,107 @@
+# Configuration - Système de Surveillance Épidémiologique
+# Tanger-Tétouan-Al Hoceima, Maroc
+
+sources:
+  # Sources marocaines - Français
+  - name: "Hespress Santé"
+    type: rss
+    url: "https://www.hespress.com/sante/feed"
+    language: fr
+    
+  - name: "Le360 Santé"
+    type: rss
+    url: "https://fr.le360.ma/rss/sante.xml"
+    language: fr
+    
+  - name: "Medias24"
+    type: rss
+    url: "https://medias24.com/feed/"
+    language: fr
+  
+  # Sources internationales - Santé globale
+  - name: "WHO AFRO (Région Afrique)"
+    type: rss
+    url: "https://www.afro.who.int/rss.xml"
+    language: en
+    
+  - name: "ProMED-mail Afrique du Nord"
+    type: rss
+    url: "https://promedmail.org/feed/"
+    language: en
+    
+  - name: "ECDC - European CDC"
+    type: rss
+    url: "https://www.ecdc.europa.eu/en/home/rss-feeds-subscribe-ecdcs-updates"
+    language: en
+  
+  # Sources algériennes (pays limitrophe)
+  - name: "TSA Algérie - Santé"
+    type: rss
+    url: "https://www.tsa-algerie.dz/category/sante/feed/"
+    language: fr
+    
+  # Sources espagnoles (Ceuta/Melilla limitrophes)
+  - name: "El País - Salud"
+    type: rss
+    url: "https://feeds.elpais.com/mrss-s/pages/ep/site/elpais.com/section/sociedad/portada"
+    language: es
+
+# Mots-clés de vigilance (utilisés pour contexte supplémentaire)
+keywords:
+  maladies_infectieuses:
+    - grippe
+    - covid
+    - tuberculose
+    - méningite
+    - rougeole
+    - hépatite
+    - choléra
+    - typhoïde
+    - paludisme
+    - dengue
+    - leishmaniose
+    - rage
+    
+  symptomes_collectifs:
+    - intoxication
+    - contamination
+    - épidémie
+    - cluster
+    - foyer
+    - cas groupés
+    - éclosion
+    
+  one_health:
+    - zoonose
+    - grippe aviaire
+    - fièvre aphteuse
+    - brucellose
+    - rage animale
+    - moustiques
+    - rongeurs
+    
+  environnement:
+    - eau potable
+    - assainissement
+    - pollution
+    - pesticides
+    
+  zones_prioritaires:
+    - Tanger
+    - Tétouan
+    - Al Hoceima
+    - Larache
+    - Chefchaouen
+    - Mdiq
+    - Fnideq
+    - Martil
+    - Ceuta
+    - Melilla
+
+# Configuration de fréquence
+scan_frequency:
+  time: "07:00"  # Heure du scan quotidien (format 24h)
+  timezone: "Africa/Casablanca"
+
+# Niveau de vigilance
+alert_threshold: "medium"  # low, medium, high, critical
