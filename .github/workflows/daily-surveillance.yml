@@ -1,0 +1,52 @@
+name: Surveillance Épidémiologique Quotidienne
+
+on:
+  schedule:
+    # Exécution tous les jours à 07:00 UTC (08:00 heure Maroc en hiver, 07:00 en été)
+    - cron: '0 7 * * *'
+  
+  # Permet l'exécution manuelle depuis GitHub
+  workflow_dispatch:
+
+jobs:
+  health-surveillance:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: 📥 Checkout du code
+      uses: actions/checkout@v4
+      with:
+        persist-credentials: false
+        fetch-depth: 0
+    
+    - name: 🐍 Setup Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+        cache: 'pip'
+    
+    - name: 📦 Installation des dépendances
+      run: |
+        pip install --upgrade pip
+        pip install requests feedparser beautifulsoup4 pyyaml lxml
+    
+    - name: 🔍 Exécution de la surveillance
+      env:
+        TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+        TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+      run: |
+        python health_surveillance.py
+    
+    - name: 💾 Sauvegarde des articles vus
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add -f seen_articles.json || true
+        git diff --quiet && git diff --staged --quiet || git commit -m "📝 Update seen articles - $(date +'%Y-%m-%d')"
+    
+    - name: 📤 Push des changements
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: ${{ github.ref }}
