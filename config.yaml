@@ -56,11 +56,71 @@ sources:
     url: "https://feeds.elpais.com/mrss-s/pages/ep/site/elpais.com/section/sociedad/portada"
     language: es
 
+      # --- European CDC (High-signal Europe alerts) ---
+  - name: "ECDC - Threats (CDTR)"
+    type: rss
+    url: "https://www.ecdc.europa.eu/en/taxonomy/term/1295/feed"
+    language: en
+
+  - name: "ECDC - Epidemiological Updates"
+    type: rss
+    url: "https://www.ecdc.europa.eu/en/taxonomy/term/1310/feed"
+    language: en
+
+  - name: "ECDC - Risk Assessments"
+    type: rss
+    url: "https://www.ecdc.europa.eu/en/taxonomy/term/1505/feed"
+    language: en
+
+  - name: "ECDC - News"
+    type: rss
+    url: "https://www.ecdc.europa.eu/en/taxonomy/term/1307/feed"
+    language: en
+
+  # --- Andalusia Health System (Cross-border buffer zone) ---
+  - name: "Servicio Andaluz de Salud - Noticias"
+    type: rss
+    url: "https://www.sspa.juntadeandalucia.es/servicioandaluzdesalud/rss-noticias.xml"
+    language: es
+
+  - name: "Servicio Andaluz de Salud - Novedades"
+    type: rss
+    url: "https://www.sspa.juntadeandalucia.es/servicioandaluzdesalud/rss-novedades.xml"
+    language: es
+
+  # --- CDC Emerging Infectious Diseases (Scientific early warning) ---
+  - name: "CDC EID - Ahead of Print"
+    type: rss
+    url: "http://wwwnc.cdc.gov/eid/rss/ahead-of-print.xml"
+    language: en
+
+  - name: "CDC EID - Expedited Articles"
+    type: rss
+    url: "http://wwwnc.cdc.gov/eid/rss/expedited.xml"
+    language: en
+
+  - name: "CDC EID - Upcoming Articles"
+    type: rss
+    url: "https://wwwnc.cdc.gov/eid/rss/upcoming.xml"
+    language: en
+
+  # --- ReliefWeb (Disasters & humanitarian signals) ---
+  - name: "ReliefWeb - Global Updates"
+    type: rss
+    url: "https://reliefweb.int/rss"
+    language: en
+
 # Mots-clés de vigilance (utilisés pour contexte supplémentaire)
 keywords:
   maladies_infectieuses:
     - grippe
     - covid
+    - fièvre hémorragique
+    - ebola
+    - nipah
+    - marburg
+    - peste
+    - fièvre jaune
     - tuberculose
     - méningite
     - rougeole
@@ -74,11 +134,19 @@ keywords:
     
   symptomes_collectifs:
     - intoxication
+    - TIAC
     - contamination
     - épidémie
+    - pandémie
     - cluster
+    - flambée
+    - augmentation inhabituelle de cas
+    - hospitalisation
+    - décès
+    - urgence sanitaire
     - foyer
     - cas groupés
+    - collectivités
     - éclosion
     
   one_health:
@@ -88,8 +156,10 @@ keywords:
     - brucellose
     - rage animale
     - rage humaine
-    - moustiques
-    - rongeurs
+    - moustique
+    - rongeur
+    - phlébotome
+    - mortalité animale
     
   environnement:
     - eau potable
@@ -117,6 +187,11 @@ keywords:
     - Assilah
     - Ceuta
     - Melilla
+    - Andalousie
+    - Algérie
+    - Mauritanie
+    - MENA
+    - Maghreb
 
 # Configuration de fréquence
 scan_frequency:
