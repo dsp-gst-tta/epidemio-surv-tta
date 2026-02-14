@@ -3,7 +3,7 @@ name: Surveillance Épidémiologique Quotidienne
 on:
   schedule:
     # Exécution tous les jours à 07:00 UTC (08:00 heure Maroc en hiver, 07:00 en été)
-    - cron: '0 7 * * *'
+    - cron: '0 8 * * *'
   
   # Permet l'exécution manuelle depuis GitHub
   workflow_dispatch:
