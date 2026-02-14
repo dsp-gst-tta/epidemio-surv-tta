@@ -38,6 +38,11 @@ sources:
     type: rss
     url: "https://www.ecdc.europa.eu/en/home/rss-feeds-subscribe-ecdcs-updates"
     language: en
+
+  - name: "MAP Santé"
+    type: rss
+    url: "https://www.mapnews.ma/fr/sante/feed"
+    language: fr
   
   # Sources algériennes (pays limitrophe)
   - name: "TSA Algérie - Santé"
