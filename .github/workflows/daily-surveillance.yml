@@ -1,13 +1,20 @@
 name: Surveillance Épidémiologique Quotidienne
+
 permissions: 
   contents: write
+
+# This prevents multiple robots from working at the same time
+concurrency:
+  group: health-surveillance
+  cancel-in-progress: false
+
 on:
   schedule:
     # Exécution tous les jours à 08:00 UTC (09:00 heure Maroc en hiver, 07:00 en été)
     - cron: '0 8 * * *'
-
   # Permet l'exécution manuelle depuis GitHub
   workflow_dispatch:
+
 jobs:
   health-surveillance:
     runs-on: ubuntu-latest
@@ -16,7 +23,6 @@ jobs:
     - name: 📥 Checkout du code
       uses: actions/checkout@v4
       with:
-        ##persist-credentials: false
         fetch-depth: 0
     
     - name: 🐍 Setup Python
@@ -46,7 +52,9 @@ jobs:
         git diff --quiet && git diff --staged --quiet || git commit -m "📝 Update seen articles - $(date +'%Y-%m-%d')"
     
     - name: 📤 Push des changements
-      uses: ad-m/github-push-action@master
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        branch: ${{ github.ref }}
+      run: |
+        # Check if there's anything new in the notebook before writing
+        git pull --rebase origin ${{ github.ref_name }}
+        git push origin ${{ github.ref_name }}
+
+
