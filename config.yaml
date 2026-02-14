@@ -3,9 +3,9 @@
 
 sources:
   # Sources marocaines - Français
-  - name: "Hespress Santé"
+  - name: "Hespress Fr"
     type: rss
-    url: "https://www.hespress.com/sante/feed"
+    url: "https://www.fr.hespress.com/feed"
     language: fr
     
   - name: "Le360 Santé"
@@ -17,6 +17,11 @@ sources:
     type: rss
     url: "https://medias24.com/feed/"
     language: fr
+
+  - name: "Hespress Ar"
+    type: rss
+    url: "https://www.hespress.com/feed"
+    language: ar
   
   # Sources internationales - Santé globale
   - name: "WHO AFRO (Région Afrique)"
@@ -77,6 +82,7 @@ keywords:
     - fièvre aphteuse
     - brucellose
     - rage animale
+    - rage humaine
     - moustiques
     - rongeurs
     
@@ -85,22 +91,31 @@ keywords:
     - assainissement
     - pollution
     - pesticides
+    - inondation
+    - tremblement de terre
+    - vecteurs
     
   zones_prioritaires:
     - Tanger
     - Tétouan
     - Al Hoceima
     - Larache
+    - Ksar El Kebir
     - Chefchaouen
+    - Ouezzane
+    - Rif
+    - Fahs
+    - Anjra
     - Mdiq
     - Fnideq
     - Martil
+    - Assilah
     - Ceuta
     - Melilla
 
 # Configuration de fréquence
 scan_frequency:
-  time: "07:00"  # Heure du scan quotidien (format 24h)
+  time: "09:00"  # Heure du scan quotidien (format 24h)
   timezone: "Africa/Casablanca"
 
 # Niveau de vigilance
