@@ -6,9 +6,7 @@ sources:
   # ===================================================================
   # SOURCES LOCALES - MAROC (Tanger-Tétouan-Al Hoceima)
   # ===================================================================
-  
-  # --- TANGER LOCAL MEDIA ---
-  - name: "Tanger24"
+    - name: "Tanger24"
     type: rss
     url: "https://www.tanger24.com/feed"
     language: fr
@@ -18,72 +16,100 @@ sources:
     url: "https://www.tanja7.com/feed"
     language: ar
 
-  - name: "TanjaNews"
-    type: rss
-    url: "https://www.tanjanews.com/feed"
-    language: ar
-
   - name: "AkhbarTanja"
     type: rss
     url: "https://akhbartanja.com/feed"
+    language: ar
+
+  - name: "presstetouan"
+    type: rss
+    url: "https://presstetouan.com/feed"
     language: ar
 
   - name: "Achkayen (Nord coverage)"
     type: rss
     url: "https://www.achkayen.com/feed"
     language: ar
-
-  # --- TETOUAN / MDIQ / FNIDEQ ---
-  - name: "Tetouanews"
+    
+  - name: "canaltetouan"
     type: rss
-    url: "https://tetouanews.net/feed"
+    url: "https://canaltetouan.com/feed"
+    language: ar
+     
+  - name: "sadatetouan"
+    type: rss
+    url: "https://sadatetouan.com/feed"
+    language: ar
+    
+  - name: "chaouenpress"
+    type: rss
+    url: "https://chaouenpress.com/feed"
+    language: ar
+      
+  - name: "chaouen24"
+    type: rss
+    url: "https://chaouen24.com/feed"
+    language: ar
+    
+  - name: "Larache24"
+    type: rss
+    url: "https://larache24.net/?feed=rss2"
     language: ar
 
-  - name: "Mdiq City"
+  - name: "larachenews"
     type: rss
-    url: "https://www.mdiqcity.com/feed"
+    url: "https://larachenews.com/feed"
     language: ar
 
-  # --- LARACHE / AL HOCEIMA / CHEFCHAOUEN ---
-  - name: "Larache News"
+  - name: "laracheinfo"
     type: rss
-    url: "https://larachenews.net/feed"
+    url: "https://laracheinfo.com/feed"
     language: ar
 
-  - name: "Al Hoceima Press"
+  - name: "dalil-rif"
     type: rss
-    url: "https://alhociemapress.com/feed"
-    language: ar
-
-  - name: "Chefchaouen 24"
-    type: rss
-    url: "https://chefchaouen24.com/feed"
+    url: "https://dalil-rif.com/feed/index.rss
     language: ar
 
   # --- MAROC NATIONAL MEDIA ---
-  - name: "Hespress Fr"
-    type: rss
-    url: "https://www.fr.hespress.com/feed"
-    language: fr
-
-  - name: "Hespress Ar"
+   - name: "Hespress Ar"
     type: rss
     url: "https://www.hespress.com/feed"
     language: ar
-
-  - name: "Le360 Santé"
-    type: rss
-    url: "https://fr.le360.ma/rss/sante.xml"
-    language: fr
     
   - name: "Medias24"
     type: rss
     url: "https://medias24.com/feed/"
     language: fr
 
-  - name: "MAP Santé"
+  - name: "rue20"
     type: rss
-    url: "https://www.mapnews.ma/fr/sante/feed"
+    url: "https://rue20.com/feed"
+    language: ar
+
+  - name: "lesiteinfo"
+    type: rss
+    url: "https://www.lesiteinfo.com/feed"
+    language: fr
+
+  - name: "MAP general"
+    type: rss
+    url: "https://www.mapnews.ma/fr/actualites/general/rss"
+    language: fr
+
+  - name: "MAP social"
+    type: rss
+    url: "https://www.mapnews.ma/fr/actualites/social/rss
+    language: fr
+
+  - name: "MAP regional"
+    type: rss
+    url: "https://www.mapnews.ma/fr/actualites/regional/rss"
+    language: fr
+
+  - name: "MAP monde"
+    type: rss
+    url: "https://www.mapnews.ma/fr/actualites/monde/rss"
     language: fr
 
   # ===================================================================
