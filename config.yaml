@@ -6,7 +6,7 @@ sources:
   # ===================================================================
   # SOURCES LOCALES - MAROC (Tanger-Tétouan-Al Hoceima)
   # ===================================================================
-    - name: "Tanger24"
+  - name: "Tanger24"
     type: rss
     url: "https://www.tanger24.com/feed"
     language: fr
@@ -68,11 +68,11 @@ sources:
 
   - name: "dalil-rif"
     type: rss
-    url: "https://dalil-rif.com/feed/index.rss
+    url: "https://dalil-rif.com/feed/index.rss"
     language: ar
 
   # --- MAROC NATIONAL MEDIA ---
-   - name: "Hespress Ar"
+  - name: "Hespress Ar"
     type: rss
     url: "https://www.hespress.com/feed"
     language: ar
@@ -99,7 +99,7 @@ sources:
 
   - name: "MAP social"
     type: rss
-    url: "https://www.mapnews.ma/fr/actualites/social/rss
+    url: "https://www.mapnews.ma/fr/actualites/social/rss"
     language: fr
 
   - name: "MAP regional"
@@ -132,13 +132,13 @@ sources:
     language: en
 
   - name: "HealthMap - Global Alerts"
-    type: web_scraping  # May require custom scraping or API access
+    type: web_scraping
     url: "https://www.healthmap.org/en/"
     language: en
     note: "Consider API integration for real-time alerts"
 
   - name: "GISAID - EpiCoV Updates"
-    type: web_scraping  # Requires registration
+    type: web_scraping
     url: "https://gisaid.org/"
     language: en
     note: "Monitor for novel pathogen sequences in North Africa/MENA"
@@ -658,11 +658,11 @@ keywords:
 
 # Configuration de fréquence
 scan_frequency:
-  time: "09:00"  # Heure du scan quotidien (format 24h)
+  time: "09:00"
   timezone: "Africa/Casablanca"
 
 # Niveau de vigilance
-alert_threshold: "medium"  # low, medium, high, critical
+alert_threshold: "medium"
 
 # ===================================================================
 # ALERT SEVERITY THRESHOLDS (Recommended)
@@ -773,7 +773,7 @@ maintenance:
 # ===================================================================
 
 version: 2.0
-last_updated: 2026-02-14
+last_updated: 2026-02-16
 changes:
   - Added 35+ new sources (global, regional, scientific)
   - Enhanced North Africa coverage (Algeria, Tunisia, Libya, Mauritania)
