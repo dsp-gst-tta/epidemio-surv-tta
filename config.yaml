@@ -121,6 +121,11 @@ sources:
     url: "https://www.afro.who.int/rss.xml"
     language: en
 
+  - name: "WHO AFRO - Emergencies"
+    type: rss
+    url: "https://www.afro.who.int/rss/emergencies.xml"
+    language: en
+
   - name: "WHO Disease Outbreak News"
     type: rss
     url: "https://www.who.int/feeds/entity/csr/don/en/rss.xml"
@@ -298,7 +303,7 @@ sources:
 
   - name: "WHO EMRO (Eastern Mediterranean)"
     type: rss
-    url: "http://www.emro.who.int/rss-feeds/news/"
+    url: "https://www.emro.who.int/media/news/feed/rss/"
     language: en
 
   # ===================================================================
@@ -318,6 +323,21 @@ sources:
   - name: "CDC EID - Upcoming Articles"
     type: rss
     url: "https://wwwnc.cdc.gov/eid/rss/upcoming.xml"
+    language: en
+
+  - name: "CDC - Health Alert Network"
+    type: rss
+    url: "https://tools.cdc.gov/api/v2/resources/media/733939.rss"
+    language: en
+
+  - name: "CDC - Outbreak Updates"
+    type: rss
+    url: "https://tools.cdc.gov/api/v2/resources/media/320567.rss"
+    language: en
+
+  - name: "CDC - Travel Notices"
+    type: rss
+    url: "https://tools.cdc.gov/api/v2/resources/media/132608.rss"
     language: en
 
   - name: "Eurosurveillance - Rapid Communications"
