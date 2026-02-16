@@ -656,6 +656,14 @@ keywords:
     - Mediterranean
     - Méditerranée
 
+# Configuration de fréquence
+scan_frequency:
+  time: "09:00"  # Heure du scan quotidien (format 24h)
+  timezone: "Africa/Casablanca"
+
+# Niveau de vigilance
+alert_threshold: "medium"  # low, medium, high, critical
+
 # ===================================================================
 # ALERT SEVERITY THRESHOLDS (Recommended)
 # ===================================================================
