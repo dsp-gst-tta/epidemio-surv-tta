@@ -10,11 +10,9 @@ concurrency:
 
 on:
   schedule:
-    # Exécution tous les jours à 08:00 UTC (09:00 heure Maroc en hiver, 07:00 en été)
     - cron: '0 8 * * *'
-  # Permet l'exécution manuelle depuis GitHub
   workflow_dispatch:
-
+  
 jobs:
   health-surveillance:
     runs-on: ubuntu-latest
